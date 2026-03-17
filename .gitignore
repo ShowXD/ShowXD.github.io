@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+playwright-report/
+test-results/
+
+# Cache
+.cache/
+.vite/
+node_modules/.cache/
+
+# PWA
+dev-dist/
+
+# Claude Code (session data — not for version control)
+.claude/
+
+# Misc
+*.local
+Thumbs.db

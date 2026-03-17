@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://showxd.github.io/sitemap.xml
