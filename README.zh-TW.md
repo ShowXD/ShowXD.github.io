@@ -6,7 +6,7 @@
 
 **線上網址：** https://showxd.github.io
 
-## 技術棧
+## 使用技術
 
 - **框架：** Vue 3 + TypeScript
 - **建構工具：** Vite 6
