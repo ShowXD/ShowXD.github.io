@@ -1,24 +1,24 @@
 import type { Profile } from '@/types'
 
 export const profile: Profile = {
-  name: 'ShowXD',
+  name: 'Xue Yi-Zhan',
   taglines: [
-    'Full Stack Developer',
-    'UI/UX Enthusiast',
-    'Open Source Contributor',
-    'Creative Problem Solver',
+    'Backend Engineer',
+    'Python Developer',
+    'Data-Driven Backend Engineer',
+    'AI & ML Enthusiast',
   ],
-  bio: `Hi, I'm ShowXD — a passionate full stack developer who loves crafting elegant,
-  performant web experiences. I specialize in building modern applications with Vue,
-  TypeScript, and cloud-native architectures. When I'm not coding, I explore new
-  technologies and contribute to open source projects.`,
-  location: 'Taiwan',
-  email: 'showxd@example.com',
-  avatar: 'https://api.dicebear.com/9.x/bottts-neutral/svg?seed=ShowXD&backgroundColor=6C63FF',
+  bio: `I am a Data-Driven Backend Engineer with a strong background in Python, AI, and data analysis.
+  I specialize in building scalable RESTful APIs, designing robust data models, and integrating
+  machine learning pipelines into production systems. Passionate about clean architecture and
+  turning raw data into actionable insights.`,
+  location: 'Taiwan, Taichung',
+  email: 'n16418113@gmail.com',
+  avatar: 'https://drive.google.com/uc?export=view&id=1S0mB3a4y5Pszrpuo2EdGuNbSKYSzCcJZ',
   stats: [
     { label: 'Years Experience', value: '3+' },
     { label: 'Projects Completed', value: '20+' },
-    { label: 'Technologies', value: '15+' },
-    { label: 'GitHub Stars', value: '100+' },
+    { label: 'Technologies', value: '18+' },
+    { label: 'GitHub Repos', value: '30+' },
   ],
 }

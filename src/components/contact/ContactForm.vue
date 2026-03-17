@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 
-// Formspree endpoint - replace YOUR_FORM_ID with your actual Formspree form ID
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'
+const FORMSPREE_URL = 'https://formspree.io/f/mnjggere'
 
 const form = reactive({
   name: '',
