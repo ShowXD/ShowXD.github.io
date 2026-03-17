@@ -14,7 +14,8 @@ export const profile: Profile = {
   turning raw data into actionable insights.`,
   location: 'Taiwan, Taichung',
   email: 'n16418113@gmail.com',
-  avatar: 'https://drive.google.com/uc?export=view&id=1S0mB3a4y5Pszrpuo2EdGuNbSKYSzCcJZ',
+  // Place your photo at public/images/avatar.jpg to use your own image
+  avatar: '/images/avatar.jpg',
   stats: [
     { label: 'Years Experience', value: '3+' },
     { label: 'Projects Completed', value: '20+' },
