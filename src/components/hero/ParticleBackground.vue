@@ -7,6 +7,7 @@ const { prefersReducedMotion } = useReducedMotion()
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 let animFrame: number
 let ctx: CanvasRenderingContext2D | null = null
+let isVisible = false
 
 interface Particle {
   x: number
@@ -21,11 +22,11 @@ interface Particle {
 const particles: Particle[] = []
 const mouse = { x: -1000, y: -1000 }
 const CONNECTION_DIST = 120
-const PARTICLE_COUNT = 80
+const PARTICLE_COUNT = 60
 
 function initParticles(w: number, h: number) {
   particles.length = 0
-  const count = window.innerWidth < 768 ? 40 : PARTICLE_COUNT
+  const count = window.innerWidth < 768 ? 30 : PARTICLE_COUNT
   for (let i = 0; i < count; i++) {
     particles.push({
       x: Math.random() * w,
@@ -40,6 +41,10 @@ function initParticles(w: number, h: number) {
 }
 
 function draw() {
+  if (!isVisible) {
+    animFrame = requestAnimationFrame(draw)
+    return
+  }
   if (!ctx || !canvasRef.value) return
   const { width, height } = canvasRef.value
 
@@ -70,19 +75,21 @@ function draw() {
     ctx.fill()
   }
 
+  // Batch all connection lines into a single path per opacity bucket
+  ctx.lineWidth = 0.5
+  ctx.beginPath()
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x
       const dy = particles[i].y - particles[j].y
-      const dist = Math.sqrt(dx * dx + dy * dy)
-
-      if (dist < CONNECTION_DIST) {
-        const opacity = (1 - dist / CONNECTION_DIST) * 0.2
+      const distSq = dx * dx + dy * dy
+      if (distSq < CONNECTION_DIST * CONNECTION_DIST) {
+        const dist = Math.sqrt(distSq)
+        const opacity = (1 - dist / CONNECTION_DIST) * 0.15
+        ctx.strokeStyle = `rgba(108, 99, 255, ${opacity})`
         ctx.beginPath()
         ctx.moveTo(particles[i].x, particles[i].y)
         ctx.lineTo(particles[j].x, particles[j].y)
-        ctx.strokeStyle = `rgba(108, 99, 255, ${opacity})`
-        ctx.lineWidth = 0.5
         ctx.stroke()
       }
     }
@@ -109,6 +116,12 @@ onMounted(() => {
   ctx = canvasRef.value.getContext('2d')
   resize()
   draw()
+
+  const observer = new IntersectionObserver(
+    ([entry]) => { isVisible = entry.isIntersecting },
+    { threshold: 0 },
+  )
+  observer.observe(canvasRef.value)
 
   window.addEventListener('resize', resize, { passive: true })
   window.addEventListener('mousemove', onMouseMove, { passive: true })

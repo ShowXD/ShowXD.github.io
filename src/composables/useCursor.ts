@@ -17,8 +17,10 @@ export function useCursor() {
   }
 
   function animate() {
-    dotX.value = lerp(dotX.value, targetX, 0.12)
-    dotY.value = lerp(dotY.value, targetY, 0.12)
+    const newDotX = lerp(dotX.value, targetX, 0.12)
+    const newDotY = lerp(dotY.value, targetY, 0.12)
+    if (Math.abs(newDotX - dotX.value) > 0.1) dotX.value = newDotX
+    if (Math.abs(newDotY - dotY.value) > 0.1) dotY.value = newDotY
     animFrame = requestAnimationFrame(animate)
   }
 
