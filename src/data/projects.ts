@@ -4,7 +4,6 @@ export const projects: Project[] = [
   {
     id: 'project-1',
     title: 'DevBoard',
-    description: 'A real-time developer dashboard that aggregates GitHub activity, CI/CD status, and deployment metrics in one beautiful interface.',
     tags: ['Vue 3', 'TypeScript', 'WebSocket', 'GitHub API', 'TailwindCSS'],
     category: 'fullstack',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
@@ -15,7 +14,6 @@ export const projects: Project[] = [
   {
     id: 'project-2',
     title: 'PixelCraft',
-    description: 'An in-browser pixel art editor with layer support, animation timeline, and one-click export to GIF/PNG formats.',
     tags: ['Vue 3', 'Canvas API', 'TypeScript', 'Pinia'],
     category: 'frontend',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
@@ -26,7 +24,6 @@ export const projects: Project[] = [
   {
     id: 'project-3',
     title: 'NoteFlow',
-    description: 'A minimalist note-taking app with markdown support, tag-based organization, and local-first sync via IndexedDB.',
     tags: ['React', 'TypeScript', 'IndexedDB', 'Marked.js'],
     category: 'frontend',
     image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&h=400&fit=crop',
@@ -37,7 +34,6 @@ export const projects: Project[] = [
   {
     id: 'project-4',
     title: 'APIForge',
-    description: 'A lightweight REST API mock server with request recording, response templating, and team sharing via JSON exports.',
     tags: ['Node.js', 'Express', 'SQLite', 'Vue 3'],
     category: 'fullstack',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
@@ -48,7 +44,6 @@ export const projects: Project[] = [
   {
     id: 'project-5',
     title: 'DataViz Kit',
-    description: 'A collection of reusable Vue 3 chart components built on top of D3.js, supporting 12+ chart types with dark mode.',
     tags: ['Vue 3', 'D3.js', 'TypeScript', 'CSS Variables'],
     category: 'frontend',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
@@ -59,7 +54,6 @@ export const projects: Project[] = [
   {
     id: 'project-6',
     title: 'TaskHive',
-    description: 'A team task management API built with Python and Flask, featuring JWT auth, WebSocket notifications, and role-based permissions.',
     tags: ['Python', 'Flask', 'PostgreSQL', 'WebSocket', 'JWT'],
     category: 'backend',
     image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop',
@@ -70,8 +64,8 @@ export const projects: Project[] = [
 ]
 
 export const projectCategories = [
-  { key: 'all', label: 'All Projects' },
-  { key: 'fullstack', label: 'Full Stack' },
-  { key: 'frontend', label: 'Frontend' },
-  { key: 'backend', label: 'Backend' },
+  { key: 'all' },
+  { key: 'fullstack' },
+  { key: 'frontend' },
+  { key: 'backend' },
 ] as const

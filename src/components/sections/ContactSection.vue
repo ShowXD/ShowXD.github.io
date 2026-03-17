@@ -1,21 +1,23 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import SectionWrapper from '@/components/common/SectionWrapper.vue'
 import ContactForm from '@/components/contact/ContactForm.vue'
 import { socialLinks } from '@/data/social'
 import { profile } from '@/data/profile'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <SectionWrapper
     id="contact"
-    title="Get In Touch"
-    subtitle="Have a project in mind? I'd love to hear from you."
+    :title="t('contact.title')"
+    :subtitle="t('contact.subtitle')"
   >
     <div class="contact-grid">
       <div class="contact-info">
         <p class="info-text">
-          I'm currently open to new opportunities — whether it's a full-time role,
-          freelance project, or just a friendly conversation about tech. My inbox is always open!
+          {{ t('contact.info_text') }}
         </p>
 
         <div class="contact-details">
@@ -24,7 +26,7 @@ import { profile } from '@/data/profile'
               <span class="i-mdi-email-outline text-primary" />
             </div>
             <div>
-              <p class="detail-label">Email</p>
+              <p class="detail-label">{{ t('contact.email_label') }}</p>
               <p class="detail-value">{{ profile.email }}</p>
             </div>
           </a>
@@ -33,7 +35,7 @@ import { profile } from '@/data/profile'
               <span class="i-mdi-map-marker-outline text-primary" />
             </div>
             <div>
-              <p class="detail-label">Location</p>
+              <p class="detail-label">{{ t('contact.location_label') }}</p>
               <p class="detail-value">{{ profile.location }}</p>
             </div>
           </div>
@@ -41,7 +43,7 @@ import { profile } from '@/data/profile'
 
         <div class="social-section">
           <p class="social-title">
-            Find me on
+            {{ t('contact.find_me_on') }}
           </p>
           <div class="social-links">
             <a

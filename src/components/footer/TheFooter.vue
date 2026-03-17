@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { socialLinks } from '@/data/social'
 
+const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -10,7 +12,7 @@ const currentYear = new Date().getFullYear()
       <div class="footer-inner">
         <p class="footer-text">
           <span class="gradient-primary font-600">ShowXD</span>
-          &copy; {{ currentYear }} — Built with Vue 3, UnoCSS & ☕
+          &copy; {{ currentYear }} — {{ t('footer.built_with') }} ☕
         </p>
         <div class="footer-links" role="list" aria-label="Social links">
           <a

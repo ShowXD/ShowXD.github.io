@@ -1,14 +1,17 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import SectionWrapper from '@/components/common/SectionWrapper.vue'
 import TimelineItem from '@/components/experience/TimelineItem.vue'
 import { experiences } from '@/data/experience'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <SectionWrapper
     id="experience"
-    title="Experience"
-    subtitle="My professional journey and educational background."
+    :title="t('experience.title')"
+    :subtitle="t('experience.subtitle')"
     dark
   >
     <div class="timeline-wrapper">

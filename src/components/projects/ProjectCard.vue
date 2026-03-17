@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import type { Project } from '@/types'
 
+const { t } = useI18n()
 defineProps<{ project: Project }>()
 </script>
 
@@ -18,7 +20,7 @@ defineProps<{ project: Project }>()
           <a
             v-if="project.github"
             :href="project.github"
-            aria-label="View source code"
+            :aria-label="t('projects.view_source')"
             class="action-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +30,7 @@ defineProps<{ project: Project }>()
           <a
             v-if="project.demo && project.demo !== '#'"
             :href="project.demo"
-            aria-label="View live demo"
+            :aria-label="t('projects.view_demo')"
             class="action-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -38,7 +40,7 @@ defineProps<{ project: Project }>()
         </div>
       </div>
       <div v-if="project.featured" class="featured-badge">
-        <span class="i-mdi-star text-xs mr-1" />Featured
+        <span class="i-mdi-star text-xs mr-1" />{{ t('projects.featured') }}
       </div>
     </div>
 
@@ -47,7 +49,7 @@ defineProps<{ project: Project }>()
         {{ project.title }}
       </h3>
       <p class="card-desc">
-        {{ project.description }}
+        {{ t(`projects.items.${project.id}.description`) }}
       </p>
       <div class="card-tags">
         <span

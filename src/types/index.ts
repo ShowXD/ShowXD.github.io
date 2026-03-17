@@ -1,7 +1,6 @@
 export interface Project {
   id: string
   title: string
-  description: string
   tags: string[]
   category: string
   image?: string
@@ -24,7 +23,6 @@ export interface Experience {
   period: string
   startDate: string
   endDate?: string
-  description: string[]
   tags: string[]
   type: 'work' | 'education'
 }
@@ -38,10 +36,8 @@ export interface SocialLink {
 
 export interface Profile {
   name: string
-  taglines: string[]
-  bio: string
   location: string
   email: string
   avatar: string
-  stats: { label: string; value: string }[]
+  stats: { key: string; value: string }[]
 }

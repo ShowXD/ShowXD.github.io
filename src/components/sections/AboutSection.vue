@@ -1,15 +1,18 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import SectionWrapper from '@/components/common/SectionWrapper.vue'
 import StatCounter from '@/components/about/StatCounter.vue'
 import { profile } from '@/data/profile'
 import { socialLinks } from '@/data/social'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <SectionWrapper
     id="about"
-    title="About Me"
-    subtitle="A brief introduction to who I am and what I do."
+    :title="t('about.title')"
+    :subtitle="t('about.subtitle')"
   >
     <div class="about-grid">
       <div class="avatar-col">
@@ -41,10 +44,10 @@ import { socialLinks } from '@/data/social'
 
       <div class="text-col">
         <h3 class="about-subtitle">
-          Who am I?
+          {{ t('about.who_am_i') }}
         </h3>
         <p class="about-bio">
-          {{ profile.bio }}
+          {{ t('hero.bio') }}
         </p>
 
         <div class="about-details">
@@ -60,7 +63,7 @@ import { socialLinks } from '@/data/social'
           </div>
           <div class="detail-item">
             <span class="i-mdi-circle text-accent-green mr-2" style="font-size: 0.6rem;" />
-            <span class="text-accent-green">Available for opportunities</span>
+            <span class="text-accent-green">{{ t('about.available') }}</span>
           </div>
         </div>
       </div>
@@ -69,9 +72,9 @@ import { socialLinks } from '@/data/social'
     <div class="stats-grid">
       <StatCounter
         v-for="(stat, i) in profile.stats"
-        :key="stat.label"
+        :key="stat.key"
         :value="stat.value"
-        :label="stat.label"
+        :label="t(`about.stats.${stat.key}`)"
         :delay="i * 150"
       />
     </div>

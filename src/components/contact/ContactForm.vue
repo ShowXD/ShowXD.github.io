@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const FORMSPREE_URL = 'https://formspree.io/f/mnjggere'
 
 const form = reactive({
@@ -19,15 +21,15 @@ function validate() {
   errors.message = ''
 
   if (!form.name.trim()) {
-    errors.name = 'Name is required.'
+    errors.name = t('contact.form.err_name')
     valid = false
   }
   if (!form.email.trim() || !/^[^\s@]+@[^\s@][^\s.@]*\.[^\s@]+$/.test(form.email)) {
-    errors.email = 'A valid email is required.'
+    errors.email = t('contact.form.err_email')
     valid = false
   }
   if (!form.message.trim() || form.message.length < 10) {
-    errors.message = 'Message must be at least 10 characters.'
+    errors.message = t('contact.form.err_message')
     valid = false
   }
 
@@ -68,18 +70,18 @@ async function onSubmit() {
     @submit.prevent="onSubmit"
   >
     <h3 class="form-title">
-      Send a Message
+      {{ t('contact.form.title') }}
     </h3>
 
     <div class="field">
-      <label for="name" class="field-label">Name</label>
+      <label for="name" class="field-label">{{ t('contact.form.name') }}</label>
       <input
         id="name"
         v-model="form.name"
         type="text"
         class="field-input"
         :class="{ error: errors.name }"
-        placeholder="John Doe"
+        :placeholder="t('contact.form.name_placeholder')"
         autocomplete="name"
       />
       <p v-if="errors.name" class="field-error">
@@ -88,14 +90,14 @@ async function onSubmit() {
     </div>
 
     <div class="field">
-      <label for="email" class="field-label">Email</label>
+      <label for="email" class="field-label">{{ t('contact.form.email') }}</label>
       <input
         id="email"
         v-model="form.email"
         type="email"
         class="field-input"
         :class="{ error: errors.email }"
-        placeholder="john@example.com"
+        :placeholder="t('contact.form.email_placeholder')"
         autocomplete="email"
       />
       <p v-if="errors.email" class="field-error">
@@ -104,13 +106,13 @@ async function onSubmit() {
     </div>
 
     <div class="field">
-      <label for="message" class="field-label">Message</label>
+      <label for="message" class="field-label">{{ t('contact.form.message') }}</label>
       <textarea
         id="message"
         v-model="form.message"
         class="field-input field-textarea"
         :class="{ error: errors.message }"
-        placeholder="Tell me about your project..."
+        :placeholder="t('contact.form.message_placeholder')"
         rows="5"
       />
       <p v-if="errors.message" class="field-error">
@@ -125,17 +127,17 @@ async function onSubmit() {
     >
       <span v-if="status === 'sending'" class="i-mdi-loading animate-spin mr-2" />
       <span v-else class="i-mdi-send-outline mr-2" />
-      {{ status === 'sending' ? 'Sending...' : 'Send Message' }}
+      {{ status === 'sending' ? t('contact.form.submitting') : t('contact.form.submit') }}
     </button>
 
     <Transition name="fade">
       <p v-if="status === 'success'" class="status-msg success">
         <span class="i-mdi-check-circle-outline mr-2" />
-        Message sent! I'll get back to you soon.
+        {{ t('contact.form.success') }}
       </p>
       <p v-else-if="status === 'error'" class="status-msg error">
         <span class="i-mdi-alert-circle-outline mr-2" />
-        Something went wrong. Please try emailing directly.
+        {{ t('contact.form.error') }}
       </p>
     </Transition>
   </form>

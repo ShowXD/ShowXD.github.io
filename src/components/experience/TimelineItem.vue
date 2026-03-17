@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
 import type { Experience } from '@/types'
+
+const { tm } = useI18n()
 
 const props = defineProps<{
   experience: Experience
@@ -12,6 +15,7 @@ const itemRef = ref<HTMLElement | null>(null)
 useScrollAnimation(itemRef, { threshold: 0.2 })
 
 const isLeft = computed(() => props.index % 2 === 0)
+const descriptions = computed(() => tm(`experience.items.${props.experience.id}.description`) as string[])
 </script>
 
 <template>
@@ -42,7 +46,7 @@ const isLeft = computed(() => props.index % 2 === 0)
 
       <ul class="desc-list">
         <li
-          v-for="(item, i) in props.experience.description"
+          v-for="(item, i) in descriptions"
           :key="i"
           class="desc-item"
         >

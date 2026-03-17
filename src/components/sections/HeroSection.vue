@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ParticleBackground from '@/components/hero/ParticleBackground.vue'
 import TypewriterText from '@/components/hero/TypewriterText.vue'
 import { profile } from '@/data/profile'
 import { socialLinks } from '@/data/social'
 import { useSmoothScroll } from '@/composables/useSmoothScroll'
 
+const { t, tm } = useI18n()
 const { scrollToSection } = useSmoothScroll()
 
 const heroRef = ref<HTMLElement | null>(null)
@@ -31,26 +33,26 @@ onMounted(() => {
       <div class="hero-text">
         <p class="hero-greeting">
           <span class="i-mdi-hand-wave text-accent-gold mr-2" />
-          Hi, I'm
+          {{ t('hero.greeting') }}
         </p>
         <h1 class="hero-name">
           {{ profile.name }}
         </h1>
         <h2 class="hero-tagline">
-          <TypewriterText :texts="profile.taglines" />
+          <TypewriterText :texts="tm('hero.taglines') as string[]" />
         </h2>
         <p class="hero-bio">
-          {{ profile.bio }}
+          {{ t('hero.bio') }}
         </p>
 
         <div class="hero-ctas">
           <button class="btn-primary" @click="scrollToSection('projects')">
             <span class="i-mdi-briefcase-outline mr-2" />
-            View My Work
+            {{ t('hero.cta_work') }}
           </button>
           <button class="btn-outline" @click="scrollToSection('contact')">
             <span class="i-mdi-email-outline mr-2" />
-            Get In Touch
+            {{ t('hero.cta_contact') }}
           </button>
         </div>
 
@@ -71,7 +73,7 @@ onMounted(() => {
 
       <button
         class="scroll-indicator"
-        aria-label="Scroll to about section"
+        :aria-label="t('nav.about')"
         @click="scrollToSection('about')"
       >
         <span class="i-mdi-chevron-double-down" />

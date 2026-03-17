@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SectionWrapper from '@/components/common/SectionWrapper.vue'
 import ProjectCard from '@/components/projects/ProjectCard.vue'
 import { projects, projectCategories } from '@/data/projects'
 
+const { t } = useI18n()
 const activeFilter = ref('all')
 
 const filteredProjects = computed(() =>
@@ -16,8 +18,8 @@ const filteredProjects = computed(() =>
 <template>
   <SectionWrapper
     id="projects"
-    title="Projects"
-    subtitle="A selection of things I've built — from side projects to production apps."
+    :title="t('projects.title')"
+    :subtitle="t('projects.subtitle')"
   >
     <div class="project-filters">
       <button
@@ -27,7 +29,7 @@ const filteredProjects = computed(() =>
         :class="{ active: activeFilter === cat.key }"
         @click="activeFilter = cat.key"
       >
-        {{ cat.label }}
+        {{ t(`projects.categories.${cat.key}`) }}
       </button>
     </div>
 

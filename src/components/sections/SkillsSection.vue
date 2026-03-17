@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SectionWrapper from '@/components/common/SectionWrapper.vue'
 import SkillBar from '@/components/skills/SkillBar.vue'
 import { skills, skillCategories } from '@/data/skills'
 
+const { t } = useI18n()
 const activeCategory = ref<string>('all')
 
 const filteredSkills = computed(() =>
@@ -16,8 +18,8 @@ const filteredSkills = computed(() =>
 <template>
   <SectionWrapper
     id="skills"
-    title="Skills"
-    subtitle="Technologies and tools I work with on a regular basis."
+    :title="t('skills.title')"
+    :subtitle="t('skills.subtitle')"
     dark
   >
     <div class="skill-filters">
@@ -28,7 +30,7 @@ const filteredSkills = computed(() =>
         :class="{ active: activeCategory === cat.key }"
         @click="activeCategory = cat.key"
       >
-        {{ cat.label }}
+        {{ t(`skills.categories.${cat.key}`) }}
       </button>
     </div>
 

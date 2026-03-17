@@ -19,6 +19,7 @@ Personal portfolio website for Xue Yi-Zhan (阿薛) — Backend Engineer.
 - Typewriter hero animation
 - Scroll-triggered section reveal
 - Custom cursor
+- **Language switching** — English / 繁體中文 (persisted in localStorage)
 - Contact form (Formspree)
 - PWA support (installable)
 - Fully responsive
@@ -53,3 +54,5 @@ Pushes to `main` automatically deploy via GitHub Actions → `gh-pages` branch �
 | `src/data/experience.ts` | Work experience |
 | `src/data/social.ts` | GitHub, LinkedIn URLs |
 | `public/images/avatar.jpg` | Profile photo |
+| `src/locales/en.ts` | English translations (bio, project descriptions, UI labels) |
+| `src/locales/zh-TW.ts` | Traditional Chinese translations |

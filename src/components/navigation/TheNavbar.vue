@@ -1,19 +1,23 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useActiveSection, navSections } from '@/composables/useActiveSection'
 import { useSmoothScroll } from '@/composables/useSmoothScroll'
 import MobileMenu from './MobileMenu.vue'
 
+const { t, locale } = useI18n()
 const { activeSection } = useActiveSection()
 const { scrollToSection } = useSmoothScroll()
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
 
-const navLinks = navSections.map(id => ({
-  id,
-  label: id.charAt(0).toUpperCase() + id.slice(1),
-}))
+const navLinks = computed(() =>
+  navSections.map(id => ({
+    id,
+    label: t(`nav.${id}`),
+  })),
+)
 
 function onScroll() {
   isScrolled.value = window.scrollY > 30
@@ -25,6 +29,12 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 function navigate(sectionId: string) {
   scrollToSection(sectionId)
   isMenuOpen.value = false
+}
+
+function toggleLocale() {
+  locale.value = locale.value === 'en' ? 'zh-TW' : 'en'
+  localStorage.setItem('locale', locale.value)
+  document.documentElement.lang = locale.value
 }
 </script>
 
@@ -59,14 +69,24 @@ function navigate(sectionId: string) {
         </li>
       </ul>
 
-      <button
-        class="menu-toggle md:hidden"
-        :aria-expanded="isMenuOpen"
-        aria-label="Toggle menu"
-        @click="isMenuOpen = !isMenuOpen"
-      >
-        <span class="i-mdi-menu text-2xl" :class="{ 'i-mdi-close': isMenuOpen }" />
-      </button>
+      <div class="nav-actions">
+        <button
+          class="lang-toggle"
+          :aria-label="`Switch to ${locale === 'en' ? '繁體中文' : 'English'}`"
+          @click="toggleLocale"
+        >
+          {{ locale === 'en' ? '中' : 'EN' }}
+        </button>
+
+        <button
+          class="menu-toggle md:hidden"
+          :aria-expanded="isMenuOpen"
+          aria-label="Toggle menu"
+          @click="isMenuOpen = !isMenuOpen"
+        >
+          <span class="i-mdi-menu text-2xl" :class="{ 'i-mdi-close': isMenuOpen }" />
+        </button>
+      </div>
     </div>
 
     <div class="scroll-progress" :style="{ '--scroll': '0%' }" />
@@ -142,6 +162,32 @@ function navigate(sectionId: string) {
 
 .nav-link.active {
   color: var(--color-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle {
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  color: var(--color-text-secondary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  letter-spacing: 0.05em;
+}
+
+.lang-toggle:hover {
+  color: var(--color-primary);
+  background: rgba(108, 99, 255, 0.2);
+  border-color: rgba(108, 99, 255, 0.6);
 }
 
 .menu-toggle {

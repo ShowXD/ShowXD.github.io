@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import { routes } from './router/routes'
+import { i18n } from './plugins/i18n'
 import '@unocss/reset/normalize.css'
 import './styles/main.css'
 import 'virtual:uno.css'
@@ -16,4 +17,4 @@ const router = createRouter({
   },
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(i18n).mount('#app')
