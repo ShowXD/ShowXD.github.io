@@ -52,6 +52,14 @@ body {
   border-radius: 4px;
 }
 
+/* Lists */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* Links */
 a {
   color: inherit;

@@ -87,6 +87,12 @@ function navigate(sectionId: string) {
 </template>
 
 <style scoped>
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   position: fixed;
   top: 0;
