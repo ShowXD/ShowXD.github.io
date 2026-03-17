@@ -1,12 +1,7 @@
 {
-  "extends": "./tsconfig.app.json",
-  "include": [
-    "env.d.ts",
-    "src/**/*",
-    "src/**/*.vue",
-    "vite.config.ts",
-    "uno.config.ts",
-    "vitest.config.ts",
-    "playwright.config.ts"
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.app.json" }
   ]
 }
