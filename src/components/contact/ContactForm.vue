@@ -71,7 +71,6 @@ async function onSubmit() {
       Send a Message
     </h3>
 
-    <!-- Name -->
     <div class="field">
       <label for="name" class="field-label">Name</label>
       <input
@@ -88,7 +87,6 @@ async function onSubmit() {
       </p>
     </div>
 
-    <!-- Email -->
     <div class="field">
       <label for="email" class="field-label">Email</label>
       <input
@@ -105,7 +103,6 @@ async function onSubmit() {
       </p>
     </div>
 
-    <!-- Message -->
     <div class="field">
       <label for="message" class="field-label">Message</label>
       <textarea
@@ -121,7 +118,6 @@ async function onSubmit() {
       </p>
     </div>
 
-    <!-- Submit -->
     <button
       type="submit"
       class="submit-btn"
@@ -132,7 +128,6 @@ async function onSubmit() {
       {{ status === 'sending' ? 'Sending...' : 'Send Message' }}
     </button>
 
-    <!-- Success/Error messages -->
     <Transition name="fade">
       <p v-if="status === 'success'" class="status-msg success">
         <span class="i-mdi-check-circle-outline mr-2" />

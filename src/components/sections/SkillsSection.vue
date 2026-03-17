@@ -20,7 +20,6 @@ const filteredSkills = computed(() =>
     subtitle="Technologies and tools I work with on a regular basis."
     dark
   >
-    <!-- Category Filter -->
     <div class="skill-filters">
       <button
         v-for="cat in skillCategories"
@@ -33,7 +32,6 @@ const filteredSkills = computed(() =>
       </button>
     </div>
 
-    <!-- Skills Grid -->
     <Transition name="fade" mode="out-in">
       <div :key="activeCategory" class="skills-grid">
         <SkillBar

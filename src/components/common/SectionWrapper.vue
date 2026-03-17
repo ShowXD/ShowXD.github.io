@@ -59,7 +59,6 @@ useScrollAnimation(headerRef, { threshold: 0.1 })
   margin-top: 1.25rem;
 }
 
-/* Fade-up animation */
 .fade-up-init {
   opacity: 0;
   transform: translateY(30px);

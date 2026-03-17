@@ -12,7 +12,6 @@ import { profile } from '@/data/profile'
     subtitle="Have a project in mind? I'd love to hear from you."
   >
     <div class="contact-grid">
-      <!-- Info Column -->
       <div class="contact-info">
         <p class="info-text">
           I'm currently open to new opportunities — whether it's a full-time role,
@@ -40,7 +39,6 @@ import { profile } from '@/data/profile'
           </div>
         </div>
 
-        <!-- Social Links -->
         <div class="social-section">
           <p class="social-title">
             Find me on
@@ -62,7 +60,6 @@ import { profile } from '@/data/profile'
         </div>
       </div>
 
-      <!-- Form Column -->
       <ContactForm />
     </div>
   </SectionWrapper>

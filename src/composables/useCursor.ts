@@ -47,13 +47,11 @@ export function useCursor() {
   }
 
   onMounted(() => {
-    // Only on non-touch devices
     if (window.matchMedia('(pointer: coarse)').matches) return
 
     document.addEventListener('mousemove', onMouseMove)
     animFrame = requestAnimationFrame(animate)
 
-    // Watch for DOM changes to update listeners
     const mo = new MutationObserver(updateInteractiveListeners)
     mo.observe(document.body, { childList: true, subtree: true })
     updateInteractiveListeners()

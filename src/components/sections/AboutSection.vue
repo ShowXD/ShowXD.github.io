@@ -12,7 +12,6 @@ import { socialLinks } from '@/data/social'
     subtitle="A brief introduction to who I am and what I do."
   >
     <div class="about-grid">
-      <!-- Avatar Column -->
       <div class="avatar-col">
         <div class="avatar-wrapper">
           <div class="avatar-glow" />
@@ -25,7 +24,6 @@ import { socialLinks } from '@/data/social'
           />
           <div class="avatar-ring" />
         </div>
-        <!-- Social links below avatar -->
         <div class="about-socials">
           <a
             v-for="link in socialLinks"
@@ -41,7 +39,6 @@ import { socialLinks } from '@/data/social'
         </div>
       </div>
 
-      <!-- Text Column -->
       <div class="text-col">
         <h3 class="about-subtitle">
           Who am I?
@@ -69,7 +66,6 @@ import { socialLinks } from '@/data/social'
       </div>
     </div>
 
-    <!-- Stats row -->
     <div class="stats-grid">
       <StatCounter
         v-for="(stat, i) in profile.stats"
@@ -97,7 +93,6 @@ import { socialLinks } from '@/data/social'
   }
 }
 
-/* Avatar */
 .avatar-col {
   display: flex;
   flex-direction: column;
@@ -164,7 +159,6 @@ import { socialLinks } from '@/data/social'
   transform: translateY(-3px);
 }
 
-/* Text */
 .about-subtitle {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.5rem;
@@ -193,7 +187,6 @@ import { socialLinks } from '@/data/social'
   font-size: 0.95rem;
 }
 
-/* Stats */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

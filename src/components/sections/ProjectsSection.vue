@@ -19,7 +19,6 @@ const filteredProjects = computed(() =>
     title="Projects"
     subtitle="A selection of things I've built — from side projects to production apps."
   >
-    <!-- Filter -->
     <div class="project-filters">
       <button
         v-for="cat in projectCategories"
@@ -32,7 +31,6 @@ const filteredProjects = computed(() =>
       </button>
     </div>
 
-    <!-- Grid -->
     <TransitionGroup name="project-grid" tag="div" class="projects-grid">
       <ProjectCard
         v-for="project in filteredProjects"
@@ -93,7 +91,6 @@ const filteredProjects = computed(() =>
   }
 }
 
-/* TransitionGroup */
 .project-grid-enter-active {
   transition: all 0.4s ease;
 }

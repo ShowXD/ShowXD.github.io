@@ -20,7 +20,6 @@ const isLeft = computed(() => props.index % 2 === 0)
     class="timeline-item fade-up-init"
     :class="{ 'is-left': isLeft, 'is-right': !isLeft }"
   >
-    <!-- Timeline dot -->
     <div class="timeline-dot">
       <span
         :class="props.experience.type === 'work' ? 'i-mdi-briefcase-outline' : 'i-mdi-school-outline'"
@@ -28,7 +27,6 @@ const isLeft = computed(() => props.index % 2 === 0)
       />
     </div>
 
-    <!-- Card -->
     <div class="timeline-card glass-card p-6">
       <div class="card-header">
         <div>
@@ -129,7 +127,6 @@ const isLeft = computed(() => props.index % 2 === 0)
   box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
 }
 
-/* Card */
 .card-header {
   display: flex;
   justify-content: space-between;

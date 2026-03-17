@@ -24,13 +24,9 @@ onMounted(() => {
     ref="heroRef"
     class="hero-section"
   >
-    <!-- Particle Background -->
     <ParticleBackground />
-
-    <!-- Background gradient overlay -->
     <div class="hero-gradient" aria-hidden="true" />
 
-    <!-- Content -->
     <div class="container-section hero-content" :class="{ visible: isVisible }">
       <div class="hero-text">
         <p class="hero-greeting">
@@ -47,7 +43,6 @@ onMounted(() => {
           {{ profile.bio }}
         </p>
 
-        <!-- CTAs -->
         <div class="hero-ctas">
           <button class="btn-primary" @click="scrollToSection('projects')">
             <span class="i-mdi-briefcase-outline mr-2" />
@@ -59,7 +54,6 @@ onMounted(() => {
           </button>
         </div>
 
-        <!-- Social Links -->
         <div class="hero-social">
           <a
             v-for="link in socialLinks"
@@ -75,7 +69,6 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Scroll indicator -->
       <button
         class="scroll-indicator"
         aria-label="Scroll to about section"

@@ -6,7 +6,6 @@ defineProps<{ project: Project }>()
 
 <template>
   <article class="project-card">
-    <!-- Image -->
     <div class="card-image-wrapper">
       <img
         :src="project.image"
@@ -43,7 +42,6 @@ defineProps<{ project: Project }>()
       </div>
     </div>
 
-    <!-- Content -->
     <div class="card-content">
       <h3 class="card-title">
         {{ project.title }}
@@ -81,7 +79,6 @@ defineProps<{ project: Project }>()
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(108, 99, 255, 0.1);
 }
 
-/* Image */
 .card-image-wrapper {
   position: relative;
   height: 200px;
@@ -151,7 +148,6 @@ defineProps<{ project: Project }>()
   align-items: center;
 }
 
-/* Content */
 .card-content {
   padding: 1.5rem;
   display: flex;

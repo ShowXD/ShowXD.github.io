@@ -26,7 +26,7 @@ const emit = defineEmits<{
       aria-modal="true"
       aria-label="Navigation menu"
     >
-      <ul role="list" class="mobile-nav-list">
+      <ul class="mobile-nav-list">
         <li
           v-for="(link, i) in props.links"
           :key="link.id"
@@ -46,7 +46,6 @@ const emit = defineEmits<{
     </div>
   </Transition>
 
-  <!-- Overlay -->
   <Transition name="fade">
     <div
       v-if="props.isOpen"
@@ -118,7 +117,6 @@ const emit = defineEmits<{
   color: var(--color-accent-cyan);
 }
 
-/* Animations */
 .mobile-nav-item {
   animation: slideIn 0.3s ease both;
 }

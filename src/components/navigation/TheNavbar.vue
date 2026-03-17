@@ -36,7 +36,6 @@ function navigate(sectionId: string) {
     aria-label="Main navigation"
   >
     <div class="nav-inner container-section flex items-center justify-between h-18">
-      <!-- Logo -->
       <a
         href="/"
         class="nav-logo"
@@ -47,8 +46,7 @@ function navigate(sectionId: string) {
         <span class="logo-dot" />
       </a>
 
-      <!-- Desktop Links -->
-      <ul class="nav-links hidden md:flex items-center gap-1" role="list">
+      <ul class="nav-links hidden md:flex items-center gap-1">
         <li v-for="link in navLinks" :key="link.id">
           <button
             class="nav-link"
@@ -61,7 +59,6 @@ function navigate(sectionId: string) {
         </li>
       </ul>
 
-      <!-- Mobile Menu Toggle -->
       <button
         class="menu-toggle md:hidden"
         :aria-expanded="isMenuOpen"
@@ -72,11 +69,9 @@ function navigate(sectionId: string) {
       </button>
     </div>
 
-    <!-- Scroll Progress Bar -->
     <div class="scroll-progress" :style="{ '--scroll': '0%' }" />
   </nav>
 
-  <!-- Mobile Menu -->
   <MobileMenu
     :is-open="isMenuOpen"
     :links="navLinks"
@@ -167,7 +162,6 @@ function navigate(sectionId: string) {
   height: 2px;
   background: var(--gradient-primary);
   transform-origin: left;
-  /* Controlled via JS scroll event */
 }
 
 @keyframes pulse {

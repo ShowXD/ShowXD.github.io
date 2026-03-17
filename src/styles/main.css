@@ -1,6 +1,5 @@
 @import './variables.css';
 
-/* Reset */
 *,
 *::before,
 *::after {
@@ -52,7 +51,6 @@ body {
   border-radius: 4px;
 }
 
-/* Lists */
 ul,
 ol {
   list-style: none;
@@ -60,13 +58,11 @@ ol {
   margin: 0;
 }
 
-/* Links */
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;
@@ -84,12 +80,10 @@ img {
   }
 }
 
-/* Section base styles */
 section {
   position: relative;
 }
 
-/* Gradient text utility */
 .gradient-text {
   background: var(--gradient-primary);
   -webkit-background-clip: text;

@@ -12,7 +12,6 @@ import { experiences } from '@/data/experience'
     dark
   >
     <div class="timeline-wrapper">
-      <!-- Vertical line -->
       <div class="timeline-line" aria-hidden="true" />
 
       <TimelineItem
