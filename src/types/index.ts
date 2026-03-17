@@ -35,7 +35,6 @@ export interface SocialLink {
 }
 
 export interface Profile {
-  name: string
   location: string
   email: string
   avatar: string

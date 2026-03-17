@@ -20,7 +20,7 @@ const { t } = useI18n()
           <div class="avatar-glow" />
           <img
             :src="profile.avatar"
-            :alt="`${profile.name} avatar`"
+            :alt="`${t('profile.name')} avatar`"
             class="avatar-img"
             loading="lazy"
             @error="(e) => ((e.target as HTMLImageElement).src = 'https://api.dicebear.com/9.x/bottts-neutral/svg?seed=XueYiZhan&backgroundColor=6C63FF')"

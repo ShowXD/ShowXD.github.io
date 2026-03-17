@@ -1,21 +1,25 @@
 export default {
   lang: '中',
+  profile: {
+    name: '薛佾展',
+  },
   nav: {
     home: '首頁',
-    about: '關於',
-    skills: '技能',
-    projects: '專案',
-    experience: '經歷',
-    contact: '聯絡',
+    about: '關於我',
+    skills: '我的技能',
+    projects: '專案歷程',
+    experience: '工作經歷',
+    contact: '聯絡方式',
   },
   hero: {
-    greeting: '嗨，我是',
-    taglines: ['後端工程師', 'Python 開發者', '資料驅動後端工程師', 'AI & ML 愛好者'],
-    bio: `我是一位資料驅動的後端工程師，擁有 Python、AI 和資料分析的深厚背景。
-  專注於建立可擴展的 RESTful API、設計強健的資料模型，以及將機器學習管線整合至生產系統。
-  熱衷於乾淨的架構設計，將原始資料轉化為可行的洞察。`,
+    greeting: 'Hello，我是',
+    taglines: ['後端工程師', 'Python 開發工程師', '資料驅動後端工程師', '具備人工智慧與機器學習經驗的後端工程師'],
+    bio: `我是一位資料驅動的後端工程師，具備 Python、人工智慧與資料分析的紮實基礎。
+  專注於打造具備可擴展性的 RESTful API、設計穩健且易於維護的資料模型，
+  並將機器學習流程整合至實際運行的系統中。
+  我重視系統架構的清晰性，致力於將原始資料轉化為具價值且可應用的資訊。`,
     cta_work: '查看作品',
-    cta_contact: '聯絡我',
+    cta_contact: '聯絡方式',
   },
   about: {
     title: '關於我',
@@ -25,12 +29,12 @@ export default {
     stats: {
       years_exp: '年工作經驗',
       projects: '完成專案',
-      technologies: '熟悉技術',
-      repos: 'GitHub 倉庫',
+      technologies: '使用技術',
+      repos: 'GitHub 專案',
     },
   },
   skills: {
-    title: '技能',
+    title: '我的技能',
     subtitle: '我日常工作中使用的技術與工具。',
     categories: {
       all: '全部',
@@ -42,7 +46,7 @@ export default {
     },
   },
   projects: {
-    title: '專案',
+    title: '專案歷程',
     subtitle: '我建立過的一些作品 — 從個人專案到正式產品。',
     featured: '精選',
     view_source: '查看原始碼',
@@ -107,9 +111,9 @@ export default {
     },
   },
   contact: {
-    title: '聯絡我',
-    subtitle: '有專案想法嗎？很期待聽你說。',
-    info_text: '我目前對新機會持開放態度 — 無論是全職工作、自由接案，還是純粹聊聊技術。隨時歡迎來信！',
+    title: '聯絡方式',
+    subtitle: '對我有興趣嗎，歡迎隨時聯絡。',
+    info_text: '我目前對新機會持開放態度 — 無論是全職工作、自由接案，還是純粹聊聊技術。我的信箱隨時歡迎你的來信！',
     email_label: '電子郵件',
     location_label: '所在地',
     find_me_on: '找到我',

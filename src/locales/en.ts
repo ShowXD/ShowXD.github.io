@@ -1,5 +1,8 @@
 export default {
   lang: 'EN',
+  profile: {
+    name: 'Xue Yi-Zhan',
+  },
   nav: {
     home: 'Home',
     about: 'About',
@@ -10,13 +13,13 @@ export default {
   },
   hero: {
     greeting: "Hi, I'm",
-    taglines: ['Backend Engineer', 'Python Developer', 'Data-Driven Backend Engineer', 'AI & ML Enthusiast'],
-    bio: `I am a Data-Driven Backend Engineer with a strong background in Python, AI, and data analysis.
-  I specialize in building scalable RESTful APIs, designing robust data models, and integrating
-  machine learning pipelines into production systems. Passionate about clean architecture and
-  turning raw data into actionable insights.`,
+    taglines: ['Backend Engineer', 'Python Developer', 'Data-Driven Backend Engineer', 'Backend Engineer with AI & Machine Learning Experience'],
+    bio: `I am a data-driven backend engineer with a strong foundation in Python, AI, and data analysis.
+  I specialize in building scalable RESTful APIs, designing robust and maintainable data models,
+  and integrating machine learning pipelines into production systems. I value clean architecture
+  and strive to transform raw data into valuable and actionable information.`,
     cta_work: 'View My Work',
-    cta_contact: 'Get In Touch',
+    cta_contact: 'Contact Me',
   },
   about: {
     title: 'About Me',

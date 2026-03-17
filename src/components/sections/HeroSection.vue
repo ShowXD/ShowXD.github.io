@@ -36,7 +36,7 @@ onMounted(() => {
           {{ t('hero.greeting') }}
         </p>
         <h1 class="hero-name">
-          {{ profile.name }}
+          {{ t('profile.name') }}
         </h1>
         <h2 class="hero-tagline">
           <TypewriterText :texts="tm('hero.taglines') as string[]" />
