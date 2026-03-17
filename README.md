@@ -1,3 +1,5 @@
+[English](./README.md) | [繁體中文](./README.zh-TW.md)
+
 # ShowXD Portfolio
 
 Personal portfolio website for Xue Yi-Zhan (阿薛) — Backend Engineer.
